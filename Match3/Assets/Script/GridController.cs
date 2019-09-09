@@ -8,10 +8,11 @@ public class GridController : MonoBehaviour
     public GridView gridView;
     private GridModel grid;
 
+
     void Start()
     {
         grid = new GridModel();
-        InitializeGrid(9, 9, 1);
+        InitGrid(9, 9, 1);
 
         for (int i = 0; i < 9; i++)
         {
@@ -22,7 +23,7 @@ public class GridController : MonoBehaviour
         }
     }
 
-    private void InitializeGrid(int width, int height, float increasedPos)
+    private void InitGrid(int width, int height, float increasedPos)
     {
         grid.cellPos = 0;
         grid.width = width;
@@ -36,15 +37,26 @@ public class GridController : MonoBehaviour
             for (int j = 0; j < grid.width; j++)
             {
                 grid.gridColors[i, j] = (GridModel.Colors)UnityEngine.Random.Range(1, 6);
-                grid.gridPositions[i, j] = new Vector2(increasedPos * j, increasedPos * i);
+                grid.gridPositions[i, j] = new Vector2(increasedPos * j, increasedPos * i); 
             }
         }
 
+        for (int i = 0; i < grid.height; i++)
+        {
+            for (int j = 0; j < grid.width; j++)
+            {
+                
+                while ((i >= 2 && grid.gridColors[i - 1, j] == grid.gridColors[i , j] && grid.gridColors[i - 2, j] == grid.gridColors[i, j])||
+                    (j >= 2 && grid.gridColors[i, j - 1] == grid.gridColors[i, j] && grid.gridColors[i, j - 2] == grid.gridColors[i, j]))
+                {
+                    grid.gridColors[i, j] = (GridModel.Colors)UnityEngine.Random.Range(1, 6);
+                }
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
