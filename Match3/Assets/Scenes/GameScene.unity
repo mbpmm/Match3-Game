@@ -196,6 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridView: {fileID: 1049572074}
+  width: 9
+  height: 9
 --- !u!4 &1065181367
 Transform:
   m_ObjectHideFlags: 0

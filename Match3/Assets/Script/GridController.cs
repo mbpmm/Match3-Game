@@ -7,16 +7,17 @@ public class GridController : MonoBehaviour
 {
     public GridView gridView;
     private GridModel grid;
-
+    public int width;
+    public int height;
 
     void Start()
     {
         grid = new GridModel();
-        InitGrid(9, 9, 1);
+        InitGrid(width, height, 1);
 
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < width; i++)
         {
-            for (int j = 0; j < 9; j++)
+            for (int j = 0; j < height; j++)
             {
                 gridView.DrawGrid(grid.gridColors[i, j], grid.gridPositions[i, j]);
             }
