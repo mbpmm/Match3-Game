@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class GridView : MonoBehaviour
 {
-    public GameObject template;
+    public GameObject tile;
     public Transform newParent;
+
     private Color purple=new Color(128,0,128);
 
-    public void DrawGrid(GridModel.Colors tileColor, Vector2 tilePosition)
+
+    public GameObject DrawTile(GridModel.Colors tileColor, Vector2 tilePosition)
     {
-        GameObject newTile = Instantiate(template, new Vector3(tilePosition.x, tilePosition.y), Quaternion.identity);
-        newTile.SetActive(true);
+        GameObject newTile = Instantiate(tile, new Vector3(tilePosition.x, tilePosition.y), Quaternion.identity);
 
         switch (tileColor)
         {
@@ -36,5 +37,7 @@ public class GridView : MonoBehaviour
             default:
                 break;
         }
+
+        return newTile;
     }
 }

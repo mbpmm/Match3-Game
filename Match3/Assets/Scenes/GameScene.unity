@@ -149,9 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e370d56cb93ee41b3042ffdd5550f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  template: {fileID: 7619037339374235735, guid: 792e3bb3f2f8843428fc45e6e6d3e7a1,
-    type: 3}
-  newParent: {fileID: 0}
+  tile: {fileID: 7619037339374235735, guid: 792e3bb3f2f8843428fc45e6e6d3e7a1, type: 3}
+  newParent: {fileID: 1065181367}
 --- !u!4 &1049572075
 Transform:
   m_ObjectHideFlags: 0

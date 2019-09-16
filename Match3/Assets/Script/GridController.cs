@@ -19,7 +19,7 @@ public class GridController : MonoBehaviour
         {
             for (int j = 0; j < height; j++)
             {
-                gridView.DrawGrid(grid.gridColors[i, j], grid.gridPositions[i, j]);
+                gridView.DrawTile(grid.gridColors[i, j], grid.gridPositions[i, j]);
             }
         }
     }
@@ -38,7 +38,8 @@ public class GridController : MonoBehaviour
             for (int j = 0; j < grid.width; j++)
             {
                 grid.gridColors[i, j] = (GridModel.Colors)UnityEngine.Random.Range(1, 6);
-                grid.gridPositions[i, j] = new Vector2(increasedPos * j, increasedPos * i); 
+                grid.gridPositions[i, j] = new Vector2(increasedPos * j, increasedPos * i);
+                //Debug.Log(grid.gridPositions[i, j]);
             }
         }
 
@@ -55,6 +56,31 @@ public class GridController : MonoBehaviour
             }
         }
     }
+
+    //void OnMouseDown()
+    //{
+    //    // 1
+    //    if (render.sprite == null)
+    //    {
+    //        return;
+    //    }
+
+    //    if (isSelected)
+    //    { // 2 Is it already selected?
+    //        Deselect();
+    //    }
+    //    else
+    //    {
+    //        if (previousSelected == null)
+    //        { // 3 Is it the first tile selected?
+    //            Select();
+    //        }
+    //        else
+    //        {
+    //            previousSelected.Deselect(); // 4
+    //        }
+    //    }
+    //}
 
     // Update is called once per frame
     void Update()
