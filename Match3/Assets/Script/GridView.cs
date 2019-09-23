@@ -10,9 +10,10 @@ public class GridView : MonoBehaviour
     private Color purple=new Color(128,0,128);
 
 
-    public GameObject DrawTile(GridModel.Colors tileColor, Vector2 tilePosition)
+    public GameObject DrawTile(GridModel.Colors tileColor, Vector2 tilePosition,int x, int y)
     {
-        GameObject newTile = Instantiate(tile, new Vector3(tilePosition.x, tilePosition.y), Quaternion.identity);
+        GameObject newTile = Instantiate(tile, new Vector2(tilePosition.x, tilePosition.y), Quaternion.identity);
+        newTile.name="("+x+","+y+")";
 
         switch (tileColor)
         {
