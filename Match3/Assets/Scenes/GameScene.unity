@@ -270,7 +270,7 @@ MonoBehaviour:
   tempPos: {x: 0, y: 0}
   firstPos: {x: 0, y: 0}
   lastPos: {x: 0, y: 0}
-  swipeAngle: 0
+  swipeAngle: -1
 --- !u!4 &1065181367
 Transform:
   m_ObjectHideFlags: 0

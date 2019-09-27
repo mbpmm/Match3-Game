@@ -97,7 +97,6 @@ public class GridController : MonoBehaviour
             if (hit)
             {
                 lastPos = hit.transform.position;
-                //otherJewel = hit.transform.gameObject;
                 CalculateAngle();
             }
 
@@ -113,7 +112,7 @@ public class GridController : MonoBehaviour
 
     void MoveJewels()
     {
-        if (swipeAngle==0 && colChange<columns)
+        if (swipeAngle==0 && colChange<columns && lastPos!=firstPos)
         {
             otherJewel = jewels[rowChange, colChange + 1];
             tempPos = otherJewel.transform.position;
